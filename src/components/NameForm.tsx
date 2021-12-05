@@ -1,47 +1,51 @@
-import React from 'react';
-import { DataFromValues, User } from '../types';
+import React from "react";
+import { DataFromValues } from "types";
 
-const NameForm = ({ onSubmit }: { onSubmit: (values: DataFromValues) => void }) => {
+const NameForm = ({
+    onSubmit,
+}: {
+    onSubmit: (values: DataFromValues) => void;
+}) => {
     const [values, setValues] = React.useState<DataFromValues>({
-        name: '',
-        surname: '',
-        email: ''
+        name: "",
+        surname: "",
+        email: "",
     });
     return (
         <form
             autoComplete="off"
-            onSubmit={event => {
+            onSubmit={(event) => {
                 event.preventDefault();
                 onSubmit(values);
             }}
         >
             <input
-                placeholder='Name'
+                placeholder="Name"
                 name="name"
                 value={values.name}
-                onChange={event => {
-                    setValues({...values, name:event.target.value})
+                onChange={(event) => {
+                    setValues({ ...values, name: event.target.value });
                 }}
             />
             <input
-                placeholder='Surname'
+                placeholder="Surname"
                 name="surnname"
                 value={values.surname}
-                onChange={event => {
-                    setValues({...values, surname:event.target.value})
+                onChange={(event) => {
+                    setValues({ ...values, surname: event.target.value });
                 }}
             />
             <input
-                placeholder='E-mail address'
+                placeholder="E-mail address"
                 name="email"
                 value={values.email}
-                onChange={event => {
-                    setValues({...values, email:event.target.value})
+                onChange={(event) => {
+                    setValues({ ...values, email: event.target.value });
                 }}
             />
             <button type="submit">Submit</button>
         </form>
     );
-  };
-  
-  export default NameForm;
+};
+
+export default NameForm;

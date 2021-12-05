@@ -1,19 +1,25 @@
 table {
-  border-collapse: collapse;
+    border-collapse: collapse;
 }
 
-table, th, td {
-  border: 1px solid black;
+table,
+th,
+td {
+    border: 1px solid black;
 }
-th, td {
-  padding:5px 10px 5px 10px;
+th,
+td {
+    padding: 5px 10px 5px 10px;
 }
 
 th {
-  width: 200px;
+    width: 200px;
+}
+
+th:first-child {
+    width: 100px;
 }
 
 th:last-child {
-  width: 60px;
+    width: 60px;
 }
-
