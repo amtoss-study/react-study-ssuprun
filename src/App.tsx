@@ -1,23 +1,23 @@
-import React from 'react';
-import UserList from './components/UserList'
-import NameForm from './components/NameForm'
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { User } from './types';
+import Home from "routes/Home";
+import Users from "routes/Users/Index";
+import Nav from "components/Nav";
+import { UsersContextProvider } from "UsersContext";
 
 const App = () => {
-  const [users, setUsers] = React.useState<Array<User>>([]);
-  return (
-      <div>
-          <h3>Add new user</h3>
-          <NameForm onSubmit={values => setUsers([...users, {...values, id:Date.now()}])} />
-          <UserList
-              users={users}
-              removeUser={id => {
-                  setUsers(users.filter(user => user.id !== id))
-              }}
-          />
-      </div>
-  );
-}
+    return (
+        <UsersContextProvider>
+            <Router>
+                <Nav />
+                <Switch>
+                    <Route path="/users" component={Users} />
+                    <Route path="/" component={Home} />
+                </Switch>
+            </Router>
+        </UsersContextProvider>
+    );
+};
 
 export default App;
