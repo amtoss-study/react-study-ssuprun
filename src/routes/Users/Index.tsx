@@ -4,7 +4,7 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
 import List from "./List";
 import Details from "./Details";
 
-const Visits = () => {
+const Users = () => {
     const match = useRouteMatch();
     return (
         <Switch>
@@ -14,4 +14,4 @@ const Visits = () => {
     );
 }
 
-export default Visits;
+export default Users;
