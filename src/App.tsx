@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "routes/Home";
-import Users from "routes/Users/Index";
+import Users from "routes/Users";
 import Nav from "components/Nav";
 import { UsersContextProvider } from "UsersContext";
 
